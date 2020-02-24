@@ -1,0 +1,44 @@
+<div class="main">
+
+  <div class="container">
+
+
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center nav-mobil">NotesApp</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+        </ul>
+      </div>
+    </nav>
+
+    <div class="row">
+      <div class="col s12 m8 offset-m2">
+        <h3>Add a new note!</h3>
+
+        <div class="input-field col s12">
+          <input #value1 id="title" type="text">
+          <label for="title">Title</label>
+        </div>
+
+        <div class="input-field col s12">
+          <textarea #value2 id="textarea" class="materialize-textarea"></textarea>
+          <label for="textarea">Content</label>
+        </div>
+
+        <a class="waves-effect waves-light btn-large btn-block"(click)="addNote(value1,value2)" type = "submit" name = "action">Save</a>
+
+        <ul class="collapsible">
+          <li *ngFor= "let note of notes">
+            <div class="collapsible-header">{{note.title}}</div>
+            <div class="collapsible-body"><span>{{note.body}}</span></div>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
